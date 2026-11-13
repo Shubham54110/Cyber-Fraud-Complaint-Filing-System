@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-canvas: #EFF0EC;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #FAFAF9;
+  --color-ink: #1C1C1C;
+  --color-ink-muted: #41493D;
+  --color-outline-muted: #717A6C;
+  --color-forest: #0B4F0B;
+  --color-forest-deep: #003602;
+  --color-lime: #B6F21C;
+  --color-leaf: #6BC91A;
+  --color-leaf-soft: #C4F25A;
+  --color-teal: #0B6B78;
+  --color-alert: #E5484D;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+}
+
+.civic-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(28, 28, 28, 0.06);
+  box-shadow: 0 4px 20px -2px rgba(28, 28, 28, 0.04), 0 1px 3px 0 rgba(11, 79, 11, 0.02);
+}
+
+.civic-card-frosted {
+  background-color: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(28, 28, 28, 0.04), 0 1px 3px 0 rgba(11, 79, 11, 0.02);
+}
+
+.civic-modal {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(28, 28, 28, 0.08);
+  box-shadow: 0 20px 40px -8px rgba(11, 79, 11, 0.08), 0 4px 12px -2px rgba(28, 28, 28, 0.03);
+}
+
+.civic-input {
+  background-color: #FAFAF9;
+  border: 1.5px solid rgba(28, 28, 28, 0.1);
+  border-radius: 12px;
+  color: #1C1C1C;
+  transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.civic-input:focus {
+  outline: none;
+  border-color: #0B4F0B;
+  box-shadow: 0 0 0 3px rgba(182, 242, 28, 0.45);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
